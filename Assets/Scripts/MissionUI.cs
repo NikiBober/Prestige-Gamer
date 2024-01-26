@@ -9,19 +9,36 @@ public class MissionUI : MonoBehaviour
 
     private void OnEnable()
     {
-        Open();
+        PlayerData.Instance.AddMission();
+        Clear();
+        Fill();
     }
-    public void Open()
+
+    private void Clear()
     {
-        gameObject.SetActive(true);
-
-        MissionEntry entry = Instantiate(_missionEntryPrefab);
-        entry.transform.SetParent(_missionPlace, false);
-
-        for (int i = 0; i < PlayerData.Instance._missions.Count; i++)
+        foreach (RectTransform child in _missionPlace)
         {
-
+            Destroy(child.gameObject);
         }
     }
+
+    private void Fill()
+    {
+        for (int i = 0; i < PlayerData.Instance.Missions.Count; i++)
+        {
+            MissionEntry entry = Instantiate(_missionEntryPrefab);
+            entry.transform.SetParent(_missionPlace, false);
+            entry.FillWithMission(PlayerData.Instance.Missions[i], this);
+        }
+    }
+
+    public void Claim(MissionBase mission)
+    {
+/*        PlayerData.instance.ClaimMission(m);
+
+        // Rebuild the UI with the new missions
+        StartCoroutine(Open());
+*/    }
+
 
 }

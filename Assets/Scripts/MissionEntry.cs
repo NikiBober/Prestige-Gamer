@@ -3,44 +3,27 @@ using UnityEngine.UI;
 
 public class MissionEntry : MonoBehaviour
 {
-    public Text descText;
-    public Text rewardText;
-    public Button claimButton;
-    public Text progressText;
-	public Image background;
+    [SerializeField] private Text _descriptionText;
+    [SerializeField] private Text _rewardText;
+    [SerializeField] private Button _claimButton;
+    [SerializeField] private Text _progressText;
+	[SerializeField] private Image _background;
 
-	public Color notCompletedColor;
-	public Color completedColor;
-    /*
-    public void FillWithMission(MissionBase m, MissionUI owner)
+	[SerializeField] private Color _completedColor;
+    
+    public void FillWithMission(MissionBase mission, MissionUI owner)
     {
-        descText.text = m.GetMissionDesc();
-        rewardText.text = m.reward.ToString();
+        _descriptionText.text = mission.GetMissionDesc();
+        _rewardText.text = mission.Reward.ToString();
+        _progressText.text = $"{(int)mission.Progress} / {mission.Max}";
 
-        if (m.isComplete)
+        if (mission.IsComplete)
         {
-            claimButton.gameObject.SetActive(true);
-            progressText.gameObject.SetActive(false);
+            _claimButton.gameObject.SetActive(true);
 
-			background.color = completedColor;
+            _background.color = _completedColor;
 
-			progressText.color = Color.white;
-			descText.color = Color.white;
-			rewardText.color = Color.white;
-
-			claimButton.onClick.AddListener(delegate { owner.Claim(m); } );
+            _claimButton.onClick.AddListener(() => owner.Claim(mission));
         }
-        else
-        {
-            claimButton.gameObject.SetActive(false);
-            progressText.gameObject.SetActive(true);
-
-			background.color = notCompletedColor;
-
-			progressText.color = Color.black;
-			descText.color = completedColor;
-
-			progressText.text = ((int)m.progress) + " / " + ((int)m.max);
-        }
-    }*/
+    }
 }

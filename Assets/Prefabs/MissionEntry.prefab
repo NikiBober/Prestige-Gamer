@@ -369,11 +369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4557445162849cfb5dad765016e0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descText: {fileID: 114000012858281854}
-  rewardText: {fileID: 114000012481184826}
-  claimButton: {fileID: 114000011400906510}
-  progressText: {fileID: 114000011396073396}
-  background: {fileID: 114000010879049528}
+  _descriptionText: {fileID: 114000012858281854}
+  _rewardText: {fileID: 114000012481184826}
+  _claimButton: {fileID: 114000011400906510}
+  _progressText: {fileID: 114000011396073396}
+  _background: {fileID: 114000010879049528}
   notCompletedColor: {r: 1, g: 1, b: 1, a: 0}
   completedColor: {r: 0, g: 0.49803922, b: 1, a: 0}
 --- !u!114 &114000013312222350
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 114000012858281854}
   - component: {fileID: 114000011336057292}
   m_Layer: 5
-  m_Name: DescText
+  m_Name: DescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -678,7 +678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &224000011567939944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -694,10 +694,10 @@ RectTransform:
   - {fileID: 224000013700949434}
   m_Father: {fileID: 224000012462533530}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -3, y: -140}
+  m_SizeDelta: {x: 500, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222000013551995230
 CanvasRenderer:
