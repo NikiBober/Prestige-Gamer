@@ -374,8 +374,7 @@ MonoBehaviour:
   _claimButton: {fileID: 114000011400906510}
   _progressText: {fileID: 114000011396073396}
   _background: {fileID: 114000010879049528}
-  notCompletedColor: {r: 1, g: 1, b: 1, a: 0}
-  completedColor: {r: 0, g: 0.49803922, b: 1, a: 0}
+  _completedColor: {r: 0.3443396, g: 0.5990666, b: 1, a: 0}
 --- !u!114 &114000013312222350
 MonoBehaviour:
   m_ObjectHideFlags: 0

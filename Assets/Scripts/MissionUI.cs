@@ -34,11 +34,12 @@ public class MissionUI : MonoBehaviour
 
     public void Claim(MissionBase mission)
     {
-/*        PlayerData.instance.ClaimMission(m);
+        PlayerData.Instance.ClaimMission(mission);
 
         // Rebuild the UI with the new missions
-        StartCoroutine(Open());
-*/    }
+        Clear();
+        Fill();
+    }
 
 
 }

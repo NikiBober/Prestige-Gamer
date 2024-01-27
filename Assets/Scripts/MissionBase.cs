@@ -23,6 +23,8 @@ public abstract class MissionBase
 
     public abstract void Created();
     public abstract string GetMissionDesc();
+    public abstract void Update(MissionTracker tracker);
+
 
     public static MissionBase GetNewMissionFromType(MissionType type)
     {
@@ -50,6 +52,11 @@ public abstract class MissionBase
         public override string GetMissionDesc()
         {
             return $"Play any game for {Max} seconds";
+        }
+
+        public override void Update(MissionTracker tracker)
+        {
+            Progress = tracker.Time;
         }
     }
 }
